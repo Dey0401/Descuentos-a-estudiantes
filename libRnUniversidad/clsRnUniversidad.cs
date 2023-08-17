@@ -120,7 +120,7 @@ namespace libRnUniversidad
         }
 #endregion
 
-        #region Methotd privates
+        #region Methotd public
         public bool hallarDatos()
         {
             return leerArchivo();
