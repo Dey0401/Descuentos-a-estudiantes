@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using libRnUniversidad;
+using libRnUniversidad;
 
 namespace libOpeUniversidad
 {
@@ -17,6 +17,29 @@ namespace libOpeUniversidad
         private float _fltValDescuento;
         private float _fltValPago;
         private string _strError;
+        #endregion
+
+        #region Constructor
+        public clsOpeUniversidad()
+        {
+            _intTipoEst       = 0;
+            _fltProm          = 0;
+            _fltValCredito    = 0;
+            _intCredit        = 0;
+            _fltValDescuento  = 0;
+            _fltValPago       = 0;
+            _strError = string.Empty;
+        }
+        public clsOpeUniversidad(int intTipoEst, float fltProm, float fltValCredito, int intCredit, float fltValDescuento, float fltValPago, string strError)
+        {
+            _intTipoEst = intTipoEst;
+            _fltProm = fltProm;
+            _fltValCredito = fltValCredito;
+            _intCredit = intCredit;
+            _fltValDescuento = fltValDescuento;
+            _fltValPago = fltValPago;
+            _strError = strError;
+        }
         #endregion
 
         #region Properties
@@ -94,7 +117,7 @@ namespace libOpeUniversidad
             }
             if (_intCredit > 0 && _fltValCredito > 0)
             {
-                _fltValPago = _fltValCredito - _fltValDescuento;
+                _fltValPago = (_fltValCredito*_intCredit) - _fltValDescuento;
                 return true;
             }
             else
