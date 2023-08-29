@@ -19,7 +19,7 @@ namespace appPractica1
         }
 
         #region Methots Propios
-        private void Mensaje(string texto)
+        private void Mensaje(string texto)  
         {
             this.MensajError.Text = texto;
         } 
